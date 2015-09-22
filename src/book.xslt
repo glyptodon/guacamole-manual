@@ -28,6 +28,12 @@
 
     <xsl:param name="body.start.indent">0pt</xsl:param>
 
+    <!-- Root properties -->
+    <xsl:attribute-set name="root.properties">
+        <xsl:attribute name="widows">4</xsl:attribute>
+        <xsl:attribute name="orphans">4</xsl:attribute>
+    </xsl:attribute-set>
+
     <!-- Fonts -->
     <xsl:param name="title.font.family">Nimbus Sans L</xsl:param>
     <xsl:param name="body.font.family">Nimbus Roman No9 L</xsl:param>
