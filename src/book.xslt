@@ -148,4 +148,7 @@
         <xsl:attribute name="text-align">center</xsl:attribute>
     </xsl:attribute-set>
 
+    <!-- Place variablelist terms on own line -->
+    <xsl:param name="variablelist.as.blocks">1</xsl:param>
+
 </xsl:stylesheet>
