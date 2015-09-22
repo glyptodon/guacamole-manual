@@ -12,8 +12,8 @@
 
 
     <!-- Book Dimensions -->
-    <xsl:param name="page.width">7in</xsl:param>
-    <xsl:param name="page.height">9.1875in</xsl:param>
+    <xsl:param name="page.width">7.5in</xsl:param>
+    <xsl:param name="page.height">9.25in</xsl:param>
 
     <!-- Margins (see
          https://www.createspace.com/Products/Book/InteriorPDF.jsp, as these
