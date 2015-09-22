@@ -19,7 +19,7 @@
         <mediaobject>
             <imageobject>
                 <imagedata fileref="images/guacamole-settings-sections.png" format="PNG"
-                    contentwidth="1.5in"/>
+                    contentwidth="3in"/>
             </imageobject>
             <caption>
                 <para>Sections within the Guacamole settings screen.</para>
@@ -180,7 +180,7 @@
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="images/edit-connection.png" format="PNG"
-                            contentwidth="5in"/>
+                            contentwidth="4in"/>
                     </imageobject>
                     <caption>
                         <para>Editing a connection</para>
