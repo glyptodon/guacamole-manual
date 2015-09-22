@@ -33,23 +33,33 @@
     <xsl:param name="body.font.family">Nimbus Roman No9 L</xsl:param>
     <xsl:param name="monospace.font.family">DejaVu Sans Mono</xsl:param>
 
-    <!-- Limiting font-size of verbatim environments to 75% gives us
-         at least 75 columns of text to work with, rather than way less
-         than that. -->
+    <!-- Vary monospace font size contextually -->
     <xsl:attribute-set name="monospace.properties">
         <xsl:attribute name="font-size">
             <xsl:choose>
+
+                <!-- Limiting font-size of verbatim environments to 70% gives
+                     us at least 81 columns of text to work with, rather than
+                     way less than that. -->
+
+                <xsl:when test="
+                       local-name(..) = 'important'
+                    or local-name(.)  = 'screen'
+                    or local-name(.)  = 'programlisting'">0.70em</xsl:when>
+
+                <!-- Limiting font-size elsewhere to 80% matches the letter
+                     height of the body text font. -->
                 <xsl:when test="
                        local-name(..) = 'title'
                     or local-name(..) = 'section'
-                    or local-name(..) = 'important'
                     or local-name(..) = 'para'
                     or local-name(..) = 'term'
                     or local-name(..) = 'entry'
-                    or local-name(..) = 'emphasis'
-                    or local-name(.)  = 'screen'
-                    or local-name(.)  = 'programlisting'">0.75em</xsl:when>
+                    or local-name(..) = 'emphasis'">0.8em</xsl:when>
+
+                <!-- Default to unchanged -->
                 <xsl:otherwise>1em</xsl:otherwise>
+
             </xsl:choose>
         </xsl:attribute>
     </xsl:attribute-set>
