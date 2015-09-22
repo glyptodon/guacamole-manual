@@ -29,12 +29,11 @@
         and its extensions.</para>
     <section xml:id="guacamole-home">
         <title><varname>GUACAMOLE_HOME</varname></title>
-        <indexterm xmlns:xl="http://www.w3.org/1999/xlink">
-            <primary><varname>GUACAMOLE_HOME</varname></primary>
-        </indexterm>
-        <para>Guacamole reads files from its own configuration directory by default, resorting to
-            the classpath only when this directory cannot be found. When locating this directory,
-            Guacamole will try, in order:</para>
+        <para><indexterm xmlns:xl="http://www.w3.org/1999/xlink">
+                <primary><varname>GUACAMOLE_HOME</varname></primary>
+            </indexterm>Guacamole reads files from its own configuration directory by default,
+            resorting to the classpath only when this directory cannot be found. When locating this
+            directory, Guacamole will try, in order:</para>
         <orderedlist>
             <listitem>
                 <para>The directory specified within the system property
@@ -45,14 +44,12 @@
                         <varname>GUACAMOLE_HOME</varname>.</para>
             </listitem>
             <listitem>
-                <para>The directory <filename>.guacamole</filename>, located
-                    within the home directory of the user running the servlet
-                    container.</para>
+                <para>The directory <filename>.guacamole</filename>, located within the home
+                    directory of the user running the servlet container.</para>
             </listitem>
         </orderedlist>
-        <para>This directory will be referred to as
-                <varname>GUACAMOLE_HOME</varname> elsewhere in the
-            documentation.</para>
+        <para>This directory will be referred to as <varname>GUACAMOLE_HOME</varname> elsewhere in
+            the documentation.</para>
         <para>Guacamole uses <varname>GUACAMOLE_HOME</varname> as the primary search location for
             configuration file like <filename>guacamole.properties</filename>. The structure of
                 <varname>GUACAMOLE_HOME</varname> is rigorously defined, and consists of the
@@ -97,13 +94,11 @@
 
     <section xml:id="initial-setup">
         <title><filename>guacamole.properties</filename></title>
-        <indexterm xmlns:xl="http://www.w3.org/1999/xlink">
-            <primary><filename>guacamole.properties</filename></primary>
-        </indexterm>
-        <indexterm xmlns:xl="http://www.w3.org/1999/xlink">
-            <primary>configuration</primary>
-        </indexterm>
-        <para>The Guacamole web application uses one main configuration file called
+        <para><indexterm xmlns:xl="http://www.w3.org/1999/xlink">
+                <primary><filename>guacamole.properties</filename></primary>
+            </indexterm><indexterm xmlns:xl="http://www.w3.org/1999/xlink">
+                <primary>configuration</primary>
+            </indexterm>The Guacamole web application uses one main configuration file called
                 <filename>guacamole.properties</filename>. This file is the common location for all
             configuration properties read by Guacamole or any extension of Guacamole, including
             authentication providers.</para>
@@ -200,11 +195,10 @@ guacd-port:     4822</programlisting>
     </section>
     <section xml:id="webapp-logging">
         <title>Logging within the web application</title>
-        <indexterm>
-            <primary>logging</primary>
-        </indexterm>
-        <para>By default, Guacamole logs all messages to the console. Servlet containers like Tomcat
-            will automatically redirect these messages to a log file,
+        <para><indexterm>
+                <primary>logging</primary>
+            </indexterm>By default, Guacamole logs all messages to the console. Servlet containers
+            like Tomcat will automatically redirect these messages to a log file,
                 <filename>catalina.out</filename> in the case of Tomcat, which you can read through
             while Guacamole runs. Messages are logged at four different log levels, depending on
             message importance and severity:</para>
@@ -288,14 +282,13 @@ guacd-port:     4822</programlisting>
     </section>
     <section xml:id="basic-auth">
         <title>Using the default authentication</title>
-        <indexterm>
-            <primary>authentication</primary>
-        </indexterm>
-        <para>Guacamole's default authentication module is simple and consists of a mapping of
-            usernames to configurations. This authentication module comes with Guacamole and simply
-            reads usernames and passwords from an XML file. It is always enabled, but will only read
-            from the XML file if it exists, and is always last in priority relative to any other
-            authentication extensions.</para>
+        <para><indexterm>
+                <primary>authentication</primary>
+            </indexterm>Guacamole's default authentication module is simple and consists of a
+            mapping of usernames to configurations. This authentication module comes with Guacamole
+            and simply reads usernames and passwords from an XML file. It is always enabled, but
+            will only read from the XML file if it exists, and is always last in priority relative
+            to any other authentication extensions.</para>
         <para>There are other authentication modules available. The Guacamole project provides
             database-backed authentication modules with the ability to manage connections and users
             from the web interface, and other authentication modules can be created using the
@@ -303,12 +296,11 @@ guacd-port:     4822</programlisting>
                 <package>guacamole-ext</package>.</para>
         <section xml:id="user-mapping">
             <title><filename>user-mapping.xml</filename></title>
-            <indexterm>
-                <primary>user-mapping.xml</primary>
-            </indexterm>
-            <para>The default authentication provider used by Guacamole reads all username,
-                password, and configuration information from a file called the "user mapping". By
-                default, Guacamole will look for this file at
+            <para><indexterm>
+                    <primary>user-mapping.xml</primary>
+                </indexterm>The default authentication provider used by Guacamole reads all
+                username, password, and configuration information from a file called the "user
+                mapping". By default, Guacamole will look for this file at
                     <filename>GUACAMOLE_HOME/user-mapping.xml</filename>, but this can be overridden
                 by specifying the location with the <property>user-mapping</property> property
                 within <filename>guacamole.properties</filename>:</para>
@@ -353,61 +345,48 @@ guacd-port:     4822</programlisting>
     &lt;/authorize>
 
 &lt;/user-mapping></programlisting>
-            <para>Each user is specified with a corresponding
-                    <code>&lt;authorize></code> tag. This tag contains all
-                authorized connections for that user, each denoted with a
-                    <code>&lt;connection></code> tag. Each
-                    <code>&lt;connection></code> tag contains a corresponding
-                protocol and set of protocol-specific parameters, specified with
-                the <code>&lt;protocol></code> and <code>&lt;param></code> tags
-                respectively.</para>
+            <para>Each user is specified with a corresponding <code>&lt;authorize></code> tag. This
+                tag contains all authorized connections for that user, each denoted with a
+                    <code>&lt;connection></code> tag. Each <code>&lt;connection></code> tag contains
+                a corresponding protocol and set of protocol-specific parameters, specified with the
+                    <code>&lt;protocol></code> and <code>&lt;param></code> tags respectively.</para>
             <section xml:id="user-setup">
                 <title>Adding users</title>
-                <indexterm>
-                    <primary>users</primary>
-                    <secondary>adding</secondary>
-                </indexterm>
-                <para>When using
-                        <classname>BasicFileAuthenticationProvider</classname>,
-                    username/password pairs are specified with
-                        <code>&lt;authorize></code> tags, which each have a
-                        <code>username</code> and <code>password</code>
-                    attribute. Each <code>&lt;authorize></code> tag authorizes a
-                    specific username/password pair to access all connections
-                    within the tag:</para>
+                <para><indexterm>
+                        <primary>users</primary>
+                        <secondary>adding</secondary>
+                    </indexterm>When using <classname>BasicFileAuthenticationProvider</classname>,
+                    username/password pairs are specified with <code>&lt;authorize></code> tags,
+                    which each have a <code>username</code> and <code>password</code> attribute.
+                    Each <code>&lt;authorize></code> tag authorizes a specific username/password
+                    pair to access all connections within the tag:</para>
                 <programlisting>&lt;authorize username="<replaceable>USER</replaceable>" password="<replaceable>PASS</replaceable>">
     ...
 &lt;/authorize></programlisting>
-                <para>In the example above, the password would be listed in
-                    plaintext. If you don't want to do this, you can also
-                    specify your password hashed with MD5:</para>
+                <para>In the example above, the password would be listed in plaintext. If you don't
+                    want to do this, you can also specify your password hashed with MD5:</para>
                 <programlisting>&lt;authorize username="<replaceable>USER</replaceable>"
            password="<replaceable>319f4d26e3c536b5dd871bb2c52e3178</replaceable>"
            encoding="md5">
     ...
 &lt;/authorize></programlisting>
-                <para>After modifying user-mapping.xml, the file will be
-                    automatically reread by Guacamole, and your changes will
-                    take effect immediately. The newly-added user will be able
-                    to log in - no restart of the servlet container is
-                    needed.</para>
+                <para>After modifying user-mapping.xml, the file will be automatically reread by
+                    Guacamole, and your changes will take effect immediately. The newly-added user
+                    will be able to log in - no restart of the servlet container is needed.</para>
             </section>
             <section xml:id="connection-setup">
                 <title>Adding connections to a user</title>
-                <indexterm>
-                    <primary>connections</primary>
-                    <secondary>adding</secondary>
-                </indexterm>
-                <para>To specify a connection within an
-                        <code>&lt;authorize></code> tag, you can either list a
-                    single protocol and set of parameters (specified with a
-                        <code>&lt;protocol></code> tag and any number of
-                        <code>&lt;param></code> tags), in which case that user
-                    will have access to only one connection named "DEFAULT", or
-                    you can specify one or more connections with one or more
-                        <code>&lt;connection></code> tags, each of which can be
-                    named and contains a <code>&lt;protocol></code> tag and any
-                    number of <code>&lt;param></code> tags.</para>
+                <para><indexterm>
+                        <primary>connections</primary>
+                        <secondary>adding</secondary>
+                    </indexterm>To specify a connection within an <code>&lt;authorize></code> tag,
+                    you can either list a single protocol and set of parameters (specified with a
+                        <code>&lt;protocol></code> tag and any number of <code>&lt;param></code>
+                    tags), in which case that user will have access to only one connection named
+                    "DEFAULT", or you can specify one or more connections with one or more
+                        <code>&lt;connection></code> tags, each of which can be named and contains a
+                        <code>&lt;protocol></code> tag and any number of <code>&lt;param></code>
+                    tags.</para>
             </section>
         </section>
     </section>
@@ -420,12 +399,11 @@ guacd-port:     4822</programlisting>
             will be provided as well.</para>
         <section xml:id="vnc">
             <title>VNC</title>
-            <indexterm>
-                <primary>VNC</primary>
-            </indexterm>
-            <para>The VNC protocol is the simplest and first protocol supported by Guacamole.
-                Although generally not as fast as RDP, many VNC servers are adequate, and VNC over
-                Guacamole tends to be faster than VNC by itself due to decreased bandwidth
+            <para><indexterm>
+                    <primary>VNC</primary>
+                </indexterm>The VNC protocol is the simplest and first protocol supported by
+                Guacamole. Although generally not as fast as RDP, many VNC servers are adequate, and
+                VNC over Guacamole tends to be faster than VNC by itself due to decreased bandwidth
                 usage.</para>
             <para>VNC support for Guacamole is provided by the <package>libguac-client-vnc</package>
                 library, which will be installed as part of guacamole-server if the required
@@ -972,7 +950,7 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
                                             <listitem>
                                                 <para>ISO 8859-1 is the clipboard encoding mandated
                                                   by the VNC standard, and supports only basic Latin
-                                                  characters.  Unless your VNC server specifies
+                                                  characters. Unless your VNC server specifies
                                                   otherwise, this encoding is the only encoding
                                                   guaranteed to work.</para>
                                             </listitem>
@@ -1021,13 +999,12 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
             </section>
             <section xml:id="adding-vnc">
                 <title>Adding a VNC connection</title>
-                <indexterm>
-                    <primary>VNC</primary>
-                    <secondary>adding</secondary>
-                </indexterm>
-                <para>If you are using the default authentication built into Guacamole, and you wish
-                    to grant access to a VNC connection to a particular user, you need to locate the
-                        <code>&lt;authorize></code> section for that user within your
+                <para><indexterm>
+                        <primary>VNC</primary>
+                        <secondary>adding</secondary>
+                    </indexterm>If you are using the default authentication built into Guacamole,
+                    and you wish to grant access to a VNC connection to a particular user, you need
+                    to locate the <code>&lt;authorize></code> section for that user within your
                         <filename>user-mapping.xml</filename>, and add a section like the following
                     within it:</para>
                 <programlisting>&lt;connection name="<replaceable>Unique Name</replaceable>">
@@ -1052,78 +1029,71 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
             </section>
             <section xml:id="vnc-servers">
                 <title>Which VNC server?</title>
-                <indexterm>
-                    <primary>VNC servers</primary>
-                </indexterm>
-                <para>The choice of VNC server can make a big difference when it comes to
+                <para><indexterm>
+                        <primary>VNC servers</primary>
+                    </indexterm>The choice of VNC server can make a big difference when it comes to
                     performance, especially over slower networks. While many systems provide VNC
                     access by default, using this is often not the fastest method.</para>
                 <section xml:id="realvnc">
                     <title>RealVNC or TigerVNC</title>
-                    <indexterm>
-                        <primary>RealVNC</primary>
-                    </indexterm>
-                    <indexterm>
-                        <primary>TigerVNC</primary>
-                    </indexterm>
-                    <para>RealVNC, and its derivative TigerVNC, perform quite well. In our testing,
-                        they perform the best with Guacamole. If you are okay with having a desktop
-                        that can only be accessed via VNC, one of these is likely your best choice.
-                        Both optimize window movement and (depending on the application) scrolling,
-                        giving a very responsive user experience.</para>
+                    <para><indexterm>
+                            <primary>RealVNC</primary>
+                        </indexterm><indexterm>
+                            <primary>TigerVNC</primary>
+                        </indexterm>RealVNC, and its derivative TigerVNC, perform quite well. In our
+                        testing, they perform the best with Guacamole. If you are okay with having a
+                        desktop that can only be accessed via VNC, one of these is likely your best
+                        choice. Both optimize window movement and (depending on the application)
+                        scrolling, giving a very responsive user experience.</para>
                 </section>
                 <section xml:id="tightvnc">
                     <title>TightVNC</title>
-                    <indexterm>
-                        <primary>TightVNC</primary>
-                    </indexterm>
-                    <para>TightVNC is widely-available and performs generally as well as RealVNC or
-                        TigerVNC. If you wish to use TightVNC with Guacamole, performance should be
-                        just fine, but we highly recommend disabling its JPEG encoding. This is
-                        because images transmitted to Guacamole are always encoded losslessly as PNG
-                        images. When this operation is performed on a JPEG image, the artifacts
-                        present from JPEG's lossy compression reduce the compressibility of the
-                        image for PNG, thus leading to a slower experience overall than if JPEG was
-                        simply not used to begin with.</para>
+                    <para><indexterm>
+                            <primary>TightVNC</primary>
+                        </indexterm>TightVNC is widely-available and performs generally as well as
+                        RealVNC or TigerVNC. If you wish to use TightVNC with Guacamole, performance
+                        should be just fine, but we highly recommend disabling its JPEG encoding.
+                        This is because images transmitted to Guacamole are always encoded
+                        losslessly as PNG images. When this operation is performed on a JPEG image,
+                        the artifacts present from JPEG's lossy compression reduce the
+                        compressibility of the image for PNG, thus leading to a slower experience
+                        overall than if JPEG was simply not used to begin with.</para>
                 </section>
                 <section xml:id="x11vnc">
                     <title>x11vnc</title>
-                    <indexterm>
-                        <primary>x11vnc</primary>
-                    </indexterm>
-                    <para>The main benefit of using x11vnc is that it allows you to continue using
-                        your desktop normally, while simultaneously exposing control of your desktop
-                        via VNC. Performance of x11vnc is comparable to RealVNC, TigerVNC, and
-                        TightVNC. If you need to use your desktop locally as well as via VNC, you
-                        will likely be quite happy with x11vnc.</para>
+                    <para><indexterm>
+                            <primary>x11vnc</primary>
+                        </indexterm>The main benefit of using x11vnc is that it allows you to
+                        continue using your desktop normally, while simultaneously exposing control
+                        of your desktop via VNC. Performance of x11vnc is comparable to RealVNC,
+                        TigerVNC, and TightVNC. If you need to use your desktop locally as well as
+                        via VNC, you will likely be quite happy with x11vnc.</para>
                 </section>
                 <section xml:id="vino">
                     <title>vino</title>
-                    <indexterm>
-                        <primary>vino</primary>
-                    </indexterm>
-                    <para>vino is the VNC server that comes with the Gnome desktop environment, and
-                        is enabled if you enable "desktop sharing" via the system preferences
-                        available within Gnome. If you need to share your local desktop, we
-                        recommend using x11vnc rather vino, as it has proven more performant and
+                    <para><indexterm>
+                            <primary>vino</primary>
+                        </indexterm>vino is the VNC server that comes with the Gnome desktop
+                        environment, and is enabled if you enable "desktop sharing" via the system
+                        preferences available within Gnome. If you need to share your local desktop,
+                        we recommend using x11vnc rather vino, as it has proven more performant and
                         feature-complete in our testing. If you don't need to share a local desktop
                         but simply need an environment you can access remotely, using a VNC server
                         like RealVNC, TigerVNC, or TightVNC is a better choice.</para>
                 </section>
                 <section xml:id="qemu">
                     <title>QEMU or KVM</title>
-                    <indexterm>
-                        <primary>QEMU</primary>
-                    </indexterm>
-                    <indexterm>
-                        <primary>KVM</primary>
-                    </indexterm>
-                    <para>QEMU (and thus KVM) expose the displays of virtual machines using VNC. If
-                        you need to see the virtual monitor of your virtual machine, using this VNC
-                        connection is really your only choice. As the VNC server built into QEMU
-                        cannot be aware of higher-level operations like window movement, resizing,
-                        or scrolling, those operations will tend to be sent suboptimally, and will
-                        not be as fast as a VNC server running within the virtual machine.</para>
+                    <para><indexterm>
+                            <primary>QEMU</primary>
+                        </indexterm><indexterm>
+                            <primary>KVM</primary>
+                        </indexterm>QEMU (and thus KVM) expose the displays of virtual machines
+                        using VNC. If you need to see the virtual monitor of your virtual machine,
+                        using this VNC connection is really your only choice. As the VNC server
+                        built into QEMU cannot be aware of higher-level operations like window
+                        movement, resizing, or scrolling, those operations will tend to be sent
+                        suboptimally, and will not be as fast as a VNC server running within the
+                        virtual machine.</para>
                     <para>If you wish to use a virtual machine for desktop access, we recommend
                         installing a native VNC server inside the virtual machine after the virtual
                         machine is set up. This will give a more responsive desktop.</para>
@@ -1132,12 +1102,11 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
         </section>
         <section xml:id="rdp">
             <title>RDP</title>
-            <indexterm>
-                <primary>RDP</primary>
-            </indexterm>
-            <para>The RDP protocol is more complicated than VNC and was the second protocol
-                officially supported by Guacamole. RDP tends to be faster than VNC due to the use of
-                caching, which Guacamole does take advantage of.</para>
+            <para><indexterm>
+                    <primary>RDP</primary>
+                </indexterm>The RDP protocol is more complicated than VNC and was the second
+                protocol officially supported by Guacamole. RDP tends to be faster than VNC due to
+                the use of caching, which Guacamole does take advantage of.</para>
             <para>RDP support for Guacamole is provided by the <package>libguac-client-rdp</package>
                 library, which will be installed as part of guacamole-server if the required
                 dependencies are present during the build.</para>
@@ -1340,9 +1309,9 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
                 <para>Although Guacamole is independent of keyboard layout, RDP is not. This is
                     because Guacamole represents keys based on what they <emphasis>do</emphasis>
                     ("press the <keycap>Enter</keycap> key"), while RDP uses identifiers based on
-                    the key's location  ("press the rightmost key in the second row"). To translate
-                    between a Guacamole key event  and an RDP key event, Guacamole must know ahead
-                    of time the keyboard layout of the RDP server.</para>
+                    the key's location ("press the rightmost key in the second row"). To translate
+                    between a Guacamole key event and an RDP key event, Guacamole must know ahead of
+                    time the keyboard layout of the RDP server.</para>
                 <para>By default, the US English qwerty keyboard will be used. If this does not
                     match the keyboard layout of your RDP server, keys will not be properly
                     translated, and you will need to explicitly choose a different layout in your
@@ -1968,13 +1937,12 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
             </section>
             <section xml:id="adding-rdp">
                 <title>Adding an RDP connection</title>
-                <indexterm>
-                    <primary>RDP</primary>
-                    <secondary>adding</secondary>
-                </indexterm>
-                <para>If you are using the default authentication built into Guacamole, and you wish
-                    to grant access to a RDP connection to a particular user, you need to locate the
-                        <code>&lt;authorize></code> section for that user within your
+                <para><indexterm>
+                        <primary>RDP</primary>
+                        <secondary>adding</secondary>
+                    </indexterm>If you are using the default authentication built into Guacamole,
+                    and you wish to grant access to a RDP connection to a particular user, you need
+                    to locate the <code>&lt;authorize></code> section for that user within your
                         <filename>user-mapping.xml</filename>, and add a section like the following
                     within it:</para>
                 <programlisting>&lt;connection name="<replaceable>Unique Name</replaceable>">
@@ -2001,13 +1969,12 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
         </section>
         <section xml:id="ssh">
             <title>SSH</title>
-            <indexterm>
-                <primary>SSH</primary>
-            </indexterm>
-            <para>Unlike VNC or RDP, SSH is a text protocol. Its implementation in Guacamole is
-                actually a combination of a terminal emulator and SSH client, because the SSH
-                protocol isn't inherently graphical. Guacamole's SSH support emulates a terminal on
-                the server side, and draws the screen of this terminal remotely on the
+            <para><indexterm>
+                    <primary>SSH</primary>
+                </indexterm>Unlike VNC or RDP, SSH is a text protocol. Its implementation in
+                Guacamole is actually a combination of a terminal emulator and SSH client, because
+                the SSH protocol isn't inherently graphical. Guacamole's SSH support emulates a
+                terminal on the server side, and draws the screen of this terminal remotely on the
                 client.</para>
             <para>SSH support for Guacamole is provided by the <package>libguac-client-ssh</package>
                 library, which will be installed as part of guacamole-server if the required
@@ -2270,13 +2237,12 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
             </section>
             <section xml:id="adding-ssh">
                 <title>Adding an SSH connection</title>
-                <indexterm>
-                    <primary>SSH</primary>
-                    <secondary>adding</secondary>
-                </indexterm>
-                <para>If you are using the default authentication built into Guacamole, and you wish
-                    to grant access to a SSH connection to a particular user, you need to locate the
-                        <code>&lt;authorize></code> section for that user within your
+                <para><indexterm>
+                        <primary>SSH</primary>
+                        <secondary>adding</secondary>
+                    </indexterm>If you are using the default authentication built into Guacamole,
+                    and you wish to grant access to a SSH connection to a particular user, you need
+                    to locate the <code>&lt;authorize></code> section for that user within your
                         <filename>user-mapping.xml</filename>, and add a section like the following
                     within it:</para>
                 <programlisting>&lt;connection name="<replaceable>Unique Name</replaceable>">
@@ -2300,14 +2266,13 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
         </section>
         <section xml:id="telnet">
             <title>Telnet</title>
-            <indexterm>
-                <primary>telnet</primary>
-            </indexterm>
-            <para>Telnet is a text protocol and provides similar functionality to SSH. By nature, it
-                is not encrypted, and does not provide support for file transfer. As far as graphics
-                are concerned, Guacamole's telnet support works in the same manner as SSH: it
-                emulates a terminal on the server side which renders to the Guacamole client's
-                display.</para>
+            <para><indexterm>
+                    <primary>telnet</primary>
+                </indexterm>Telnet is a text protocol and provides similar functionality to SSH. By
+                nature, it is not encrypted, and does not provide support for file transfer. As far
+                as graphics are concerned, Guacamole's telnet support works in the same manner as
+                SSH: it emulates a terminal on the server side which renders to the Guacamole
+                client's display.</para>
             <para>Telnet support for Guacamole is provided by the
                     <package>libguac-client-telnet</package> library, which will be installed as
                 part of guacamole-server if the required dependencies are present during the
@@ -2551,13 +2516,12 @@ tcp6       0      0 :::4713                 :::*                    LISTEN</comp
             </section>
             <section xml:id="adding-telnet">
                 <title>Adding a telnet connection</title>
-                <indexterm>
-                    <primary>telnet</primary>
-                    <secondary>adding</secondary>
-                </indexterm>
-                <para>If you are using the default authentication built into Guacamole, and you wish
-                    to grant access to a telnet connection to a particular user, you need to locate
-                    the <code>&lt;authorize></code> section for that user within your
+                <para><indexterm>
+                        <primary>telnet</primary>
+                        <secondary>adding</secondary>
+                    </indexterm>If you are using the default authentication built into Guacamole,
+                    and you wish to grant access to a telnet connection to a particular user, you
+                    need to locate the <code>&lt;authorize></code> section for that user within your
                         <filename>user-mapping.xml</filename>, and add a section like the following
                     within it:</para>
                 <programlisting>&lt;connection name="<replaceable>Unique Name</replaceable>">

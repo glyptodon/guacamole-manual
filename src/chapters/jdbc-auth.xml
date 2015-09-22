@@ -478,13 +478,11 @@ result of setting "postgresql-disallow-simultaneous-connections" to
     </section>
     <section xml:id="jdbc-auth-default-user">
         <title>Logging in</title>
-        <indexterm>
-            <primary>default user</primary>
-        </indexterm>
-        <indexterm>
-            <primary><systemitem>guacadmin</systemitem></primary>
-        </indexterm>
-        <para>The default Guacamole user created by the provided SQL scripts is
+        <para><indexterm>
+                <primary>default user</primary>
+            </indexterm><indexterm>
+                <primary><systemitem>guacadmin</systemitem></primary>
+            </indexterm>The default Guacamole user created by the provided SQL scripts is
                 "<systemitem>guacadmin</systemitem>", with a default password of
                 "<systemitem>guacadmin</systemitem>". Once you have verified that the database
             authentication is working, <emphasis>you should change your password
@@ -494,26 +492,25 @@ result of setting "postgresql-disallow-simultaneous-connections" to
     </section>
     <section xml:id="jdbc-auth-schema">
         <title>Modifying data manually</title>
-        <indexterm>
-            <primary>schema</primary>
-        </indexterm>
-        <para>If necessary, it is possible to modify the data backing the authentication module
-            manually by executing SQL statements against the database. In general use, this will not
-            be common, but if you need to bulk-insert a large number of users or connections, or you
-            wish to translate an existing configuration automatically, you will need to know how
-            everything is laid out at a high level.</para>
+        <para><indexterm>
+                <primary>schema</primary>
+            </indexterm>If necessary, it is possible to modify the data backing the authentication
+            module manually by executing SQL statements against the database. In general use, this
+            will not be common, but if you need to bulk-insert a large number of users or
+            connections, or you wish to translate an existing configuration automatically, you will
+            need to know how everything is laid out at a high level.</para>
         <para>This section assumes knowledge of SQL and your chosen database, and that whatever you
             need to do can be accomplished if only you had high-level information about Guacamole's
             SQL schema.</para>
         <section xml:id="jdbc-auth-schema-users">
             <title>Users</title>
-            <indexterm>
-                <primary><classname>guacamole_user</classname></primary>
-            </indexterm>
-            <para>Every user has a corresponding entry in the <classname>guacamole_user</classname>
-                table. Each user has a corresponding unique username and salted password. The salted
-                password is split into two columns: one containing the salt, and the other
-                containing the password hashed with SHA-256.</para>
+            <para><indexterm>
+                    <primary><classname>guacamole_user</classname></primary>
+                </indexterm>Every user has a corresponding entry in the
+                    <classname>guacamole_user</classname> table. Each user has a corresponding
+                unique username and salted password. The salted password is split into two columns:
+                one containing the salt, and the other containing the password hashed with
+                SHA-256.</para>
             <para>The <classname>guacamole_user</classname> table contains the following
                 columns:</para>
             <variablelist>
@@ -634,9 +631,8 @@ result of setting "postgresql-disallow-simultaneous-connections" to
                                 <property>valid_until</property> values. This value may be any Java
                                 <classname>TimeZone</classname> ID, as defined by <link
                                 xlink:href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html#getAvailableIDs()"
-                                    ><methodname
-                                    >getAvailableIDs()</methodname></link>, though the Guacamole
-                            management interface will only present a subset of these time
+                                    ><methodname>getAvailableIDs()</methodname></link>, though the
+                            Guacamole management interface will only present a subset of these time
                             zones.</para>
                     </listitem>
                 </varlistentry>
@@ -670,15 +666,14 @@ INSERT INTO guacamole_user (username, password_salt, password_hash)
         </section>
         <section xml:id="jdbc-auth-schema-connections">
             <title>Connections and parameters</title>
-            <indexterm>
-                <primary><classname>guacamole_connection</classname></primary>
-            </indexterm>
-            <indexterm>
-                <primary><classname>guacamole_connection_parameter</classname></primary>
-            </indexterm>
-            <para>Each connection has an entry in the <classname>guacamole_connection</classname>
-                table, with a one-to-many relationship to parameters, stored as name/value pairs in
-                the <classname>guacamole_connection_parameter</classname> table.</para>
+            <para><indexterm>
+                    <primary><classname>guacamole_connection</classname></primary>
+                </indexterm><indexterm>
+                    <primary><classname>guacamole_connection_parameter</classname></primary>
+                </indexterm>Each connection has an entry in the
+                    <classname>guacamole_connection</classname> table, with a one-to-many
+                relationship to parameters, stored as name/value pairs in the
+                    <classname>guacamole_connection_parameter</classname> table.</para>
             <para>The <classname>guacamole_connection</classname> table is simply a pairing of a
                 unique and descriptive name with the protocol to be used for the connection. It
                 contains the following columns:</para>
@@ -788,11 +783,10 @@ INSERT INTO guacamole_connection_parameter VALUES (<replaceable>1</replaceable>,
             </informalexample>
             <section xml:id="jdbc-auth-schema-connection-history">
                 <title>Usage history</title>
-                <indexterm>
-                    <primary><classname>guacamole_connection_history</classname></primary>
-                </indexterm>
-                <para>When a connection is initiated or terminated, a corresponding entry in the
-                        <classname>guacamole_connection_history</classname> table is created or
+                <para><indexterm>
+                        <primary><classname>guacamole_connection_history</classname></primary>
+                    </indexterm>When a connection is initiated or terminated, a corresponding entry
+                    in the <classname>guacamole_connection_history</classname> table is created or
                     updated respectively. Each entry is associated with the user using the
                     connection, the connection itself, and the time the connection started. If the
                     connection has ended, the end time is also stored.</para>
@@ -848,10 +842,9 @@ INSERT INTO guacamole_connection_parameter VALUES (<replaceable>1</replaceable>,
         </section>
         <section xml:id="jdbc-auth-schema-connection-groups">
             <title>Connection groups</title>
-            <indexterm>
-                <primary><classname>guacamole_connection_group</classname></primary>
-            </indexterm>
-            <para>Each connection group has an entry in the
+            <para><indexterm>
+                    <primary><classname>guacamole_connection_group</classname></primary>
+                </indexterm>Each connection group has an entry in the
                     <classname>guacamole_connection_group</classname> table, with a one-to-many
                 relationship to other groups and connections.</para>
             <para>The <classname>guacamole_connection_group</classname> table is simply a pairing of
@@ -937,10 +930,9 @@ INSERT INTO guacamole_connection_group (connection_group_name, type)
                 connections respectively.</para>
             <section xml:id="jdbc-auth-schema-system-permissions">
                 <title>System permissions</title>
-                <indexterm>
-                    <primary><classname>guacamole_system_permission</classname></primary>
-                </indexterm>
-                <para>System permissions are defined by entries in the
+                <para><indexterm>
+                        <primary><classname>guacamole_system_permission</classname></primary>
+                    </indexterm>System permissions are defined by entries in the
                         <classname>guacamole_system_permission</classname> table. Each entry grants
                     permission for a specific user to perform a specific system operation.</para>
                 <para>The <classname>guacamole_system_permission</classname> table contains the
@@ -971,10 +963,9 @@ INSERT INTO guacamole_connection_group (connection_group_name, type)
             </section>
             <section xml:id="jdbc-auth-schema-user-permissions">
                 <title>User permissions</title>
-                <indexterm>
-                    <primary><classname>guacamole_user_permission</classname></primary>
-                </indexterm>
-                <para>User permissions are defined by entries in the
+                <para><indexterm>
+                        <primary><classname>guacamole_user_permission</classname></primary>
+                    </indexterm>User permissions are defined by entries in the
                         <classname>guacamole_user_permission</classname> table. Each entry grants
                     permission for a specific user to perform a specific operation on another
                     existing user.</para>
@@ -1014,10 +1005,9 @@ INSERT INTO guacamole_connection_group (connection_group_name, type)
             </section>
             <section xml:id="jdbc-auth-schema-connection-permissions">
                 <title>Connection permissions</title>
-                <indexterm>
-                    <primary><classname>guacamole_connection_permission</classname></primary>
-                </indexterm>
-                <para>Connection permissions are defined by entries in the
+                <para><indexterm>
+                        <primary><classname>guacamole_connection_permission</classname></primary>
+                    </indexterm>Connection permissions are defined by entries in the
                         <classname>guacamole_connection_permission</classname> table. Each entry
                     grants permission for a specific user to perform a specific operation on an
                     existing connection.</para>
@@ -1057,10 +1047,9 @@ INSERT INTO guacamole_connection_group (connection_group_name, type)
             </section>
             <section xml:id="jdbc-auth-schema-connection-group-permissions">
                 <title>Connection group permissions</title>
-                <indexterm>
-                    <primary><classname>guacamole_connection_group_permission</classname></primary>
-                </indexterm>
-                <para>Connection group permissions are defined by entries in the
+                <para><indexterm>
+                        <primary><classname>guacamole_connection_group_permission</classname></primary>
+                    </indexterm>Connection group permissions are defined by entries in the
                         <classname>guacamole_connection_group_permission</classname> table. Each
                     entry grants permission for a specific user to perform a specific operation on
                     an existing connection group.</para>

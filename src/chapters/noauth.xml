@@ -95,12 +95,11 @@ noauth-config: <replaceable>/etc/guacamole/noauth-config.xml</replaceable></prog
                 configuration files, including the configuration file used by NoAuth.</para>
             <section xml:id="noauth-configuration">
                 <title>The NoAuth configuration file</title>
-                <indexterm>
-                    <primary>configuring NoAuth</primary>
-                </indexterm>
-                <para>Although the NoAuth extension does not check credentials, it still requires a
-                    configuration file describing which connections are available and the protocols
-                    to use. This configuration is an XML file, typically called
+                <para><indexterm>
+                        <primary>configuring NoAuth</primary>
+                    </indexterm>Although the NoAuth extension does not check credentials, it still
+                    requires a configuration file describing which connections are available and the
+                    protocols to use. This configuration is an XML file, typically called
                         <filename>noauth-config.xml</filename>.</para>
                 <para>An example configuration file is provided in the
                         <filename>doc/example/</filename> directory of the

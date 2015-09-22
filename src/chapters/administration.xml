@@ -30,12 +30,11 @@
         you can perform administrative tasks.</para>
     <section xml:id="session-management">
         <title>Managing sessions</title>
-        <indexterm>
-            <primary>session management</primary>
-        </indexterm>
-        <para>Clicking "Active Sessions" navigates to the session management screen. The session
-            management screen displays all active sessions and allows system administrators to kill
-            them as needed.</para>
+        <para><indexterm>
+                <primary>session management</primary>
+            </indexterm>Clicking "Active Sessions" navigates to the session management screen. The
+            session management screen displays all active sessions and allows system administrators
+            to kill them as needed.</para>
         <para>When any user accesses a particular remote desktop connection, a unique session is
             created and will appear in the list of active sessions in the session management screen.
             Each active session is displayed in a sortable table, showing the corresponding user's
@@ -92,12 +91,11 @@
     </section>
     <section xml:id="user-management">
         <title>User management</title>
-        <indexterm>
-            <primary>user management</primary>
-        </indexterm>
-        <para>Clicking "Users" within the list of settings sections will take you to the user
-            management screen. Here you can add new users or edit the properties and privileges of
-            existing users.</para>
+        <para><indexterm>
+                <primary>user management</primary>
+            </indexterm>Clicking "Users" within the list of settings sections will take you to the
+            user management screen. Here you can add new users or edit the properties and privileges
+            of existing users.</para>
         <para>To add a new user, type the username of the new user within the text box inside the
             user management screen, and click the "New User" button. The new user will be added and
             made available. The new user will have no access to any existing connections, nor any
@@ -140,18 +138,15 @@
     </section>
     <section xml:id="connection-management">
         <title>Connections and groups</title>
-        <indexterm>
-            <primary>connection management</primary>
-        </indexterm>
-        <indexterm>
-            <primary>connection groups</primary>
-        </indexterm>
-        <indexterm>
-            <primary>groups</primary>
-        </indexterm>
-        <para>Clicking "Connections" within the list of settings sections will take you to the
-            connection management screen. The connection management screen allows administrators to
-            create and edit connections and connection groups.</para>
+        <para><indexterm>
+                <primary>connection management</primary>
+            </indexterm><indexterm>
+                <primary>connection groups</primary>
+            </indexterm><indexterm>
+                <primary>groups</primary>
+            </indexterm>Clicking "Connections" within the list of settings sections will take you to
+            the connection management screen. The connection management screen allows administrators
+            to create and edit connections and connection groups.</para>
         <para>To add a new connection or group, click the "New Connection" or "New Group" button.
             This will take you to a screen where you will be allowed to enter the details of the new
             object, such as its location, parameters, and name. This name should be descriptive, but

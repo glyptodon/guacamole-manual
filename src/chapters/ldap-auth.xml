@@ -229,16 +229,14 @@ dn: cn={4}guacConfigGroup,cn=schema,cn=config
         </important>
         <section>
             <title>Configuring Guacamole for LDAP</title>
-            <indexterm>
-                <primary>configuring LDAP</primary>
-            </indexterm>
-            <indexterm>
-                <primary>LDAP</primary>
-                <secondary>configuration</secondary>
-            </indexterm>
-            <para>Additional properties must be added to <filename>guacamole.properties</filename>
-                for Guacamole to load the LDAP support and for the LDAP support to properly connect
-                to your LDAP server:</para>
+            <para><indexterm>
+                    <primary>configuring LDAP</primary>
+                </indexterm><indexterm>
+                    <primary>LDAP</primary>
+                    <secondary>configuration</secondary>
+                </indexterm>Additional properties must be added to
+                    <filename>guacamole.properties</filename> for Guacamole to load the LDAP support
+                and for the LDAP support to properly connect to your LDAP server:</para>
             <programlisting># LDAP properties
 ldap-hostname:           <replaceable>localhost</replaceable>
 ldap-port:               <replaceable>389</replaceable>
@@ -328,11 +326,10 @@ ldap-config-base-dn:     <replaceable>ou=groups,dc=example,dc=net</replaceable><
     </section>
     <section xml:id="ldap-auth-schema">
         <title>The LDAP schema</title>
-        <indexterm>
-            <primary>schema</primary>
-        </indexterm>
-        <para>Guacamole's LDAP support allows users and connections to be managed purely within an
-            LDAP directory defined in <filename>guacamole.properties</filename>. This is
+        <para><indexterm>
+                <primary>schema</primary>
+            </indexterm>Guacamole's LDAP support allows users and connections to be managed purely
+            within an LDAP directory defined in <filename>guacamole.properties</filename>. This is
             accomplished with a minimum of changes to the standard LDAP schema - all Guacamole users
             are traditional LDAP users and share the same mechanism of authentication. The only new
             type of object required is a representation for Guacamole connections,

@@ -178,13 +178,12 @@
     </section>
     <section xml:id="file-transfer">
         <title>Transferring files</title>
-        <indexterm>
-            <primary>file transfer</primary>
-        </indexterm>
-        <para>You can transfer files back and forth between your local computer and the remote
-            desktop if it is supported by the underlying protocol and enabled on the connection.
-            Currently, Guacamole supports file transfer for VNC, RDP, and SSH, using either the
-            native file transfer support of the protocol or SFTP.</para>
+        <para><indexterm>
+                <primary>file transfer</primary>
+            </indexterm>You can transfer files back and forth between your local computer and the
+            remote desktop if it is supported by the underlying protocol and enabled on the
+            connection. Currently, Guacamole supports file transfer for VNC, RDP, and SSH, using
+            either the native file transfer support of the protocol or SFTP.</para>
         <para>Files can be transferred to the remote computer by dragging and dropping the files
             into your browser window, or through using the file browser located in the Guacamole
             menu.</para>
