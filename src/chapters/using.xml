@@ -85,7 +85,7 @@
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="images/guacamole-client-interface.png" format="PNG"
-                            contentwidth="6in"/>
+                            contentwidth="5in"/>
                     </imageobject>
                     <caption>
                         <para>Guacamole client interface, with the Guacamole menu open.</para>
@@ -160,21 +160,21 @@
             <mediaobject>
                 <imageobject>
                     <imagedata fileref="images/guac-menu-disconnect.png" format="PNG"
-                        contentwidth="6in"/>
+                        contentwidth="1.5in"/>
                 </imageobject>
                 <caption>
                     <para>The user menu within the Guacamole menu.</para>
                 </caption>
             </mediaobject>
-            <para>The user menu within the Guacamole menu provides an additional "Disconnect" option
-                that allows you to explicitly close the current connection only. Clicking "Logout"
-                will also implicitly disconnect all active connections, including the current
-                connection.</para>
-            <para>Navigating back to the home screen or to the settings screen will not disconnect
-                you: your connection will continue running in the background while you change
-                settings or initiate another connection, and you can resume any active connection by
-                clicking on it within the home screen.</para>
         </informalfigure>
+        <para>The user menu within the Guacamole menu provides an additional "Disconnect" option
+            that allows you to explicitly close the current connection only. Clicking "Logout" will
+            also implicitly disconnect all active connections, including the current
+            connection.</para>
+        <para>Navigating back to the home screen or to the settings screen will not disconnect you:
+            your connection will continue running in the background while you change settings or
+            initiate another connection, and you can resume any active connection by clicking on it
+            within the home screen.</para>
     </section>
     <section xml:id="file-transfer">
         <title>Transferring files</title>
@@ -233,8 +233,7 @@
                 after disconnecting.</para>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="images/guacamole-drive.png" format="PNG" contentwidth="5in"
-                    />
+                    <imagedata fileref="images/guacamole-drive.png" format="PNG" contentwidth="4in"/>
                 </imageobject>
                 <caption>
                     <para>The Guacamole drive within a Windows RDP session.</para>
@@ -247,7 +246,7 @@
             <mediaobject>
                 <imageobject>
                     <imagedata fileref="images/guacamole-drive-download.png" format="PNG"
-                        contentwidth="5in"/>
+                        contentwidth="4in"/>
                 </imageobject>
                 <caption>
                     <para>The Guacamole drive's "Download" folder.</para>
@@ -433,7 +432,7 @@ $</screen>
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="images/guacamole-preferences.png" format="PNG"
-                            contentwidth="6in"/>
+                            contentwidth="5in"/>
                     </imageobject>
                     <caption>
                         <para>Guacamole preferences screen.</para>
