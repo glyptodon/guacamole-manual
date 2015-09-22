@@ -64,16 +64,8 @@
         </xsl:attribute>
     </xsl:attribute-set>
 
-    <!-- Shade verbatim -->
-    <xsl:param name="shade.verbatim" select="1"/>
-
-    <xsl:attribute-set name="shade.verbatim.style">
-        <xsl:attribute name="background-color">#E0E0E0</xsl:attribute>
-        <xsl:attribute name="border-width">0.5pt</xsl:attribute>
-        <xsl:attribute name="border-style">solid</xsl:attribute>
-        <xsl:attribute name="border-color">#575757</xsl:attribute>
-        <xsl:attribute name="padding">3pt</xsl:attribute>
-    </xsl:attribute-set>
+    <!-- Do not shade verbatim -->
+    <xsl:param name="shade.verbatim" select="0"/>
 
     <!-- We only want a book-level TOC -->
     <xsl:param name="generate.toc" select="'book toc'"/>
