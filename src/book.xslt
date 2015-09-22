@@ -100,14 +100,13 @@
     <xsl:param name="admon.graphics">1</xsl:param>
     <xsl:param name="admon.graphics.path">images/</xsl:param>
     <xsl:param name="admon.graphics.extension">.png</xsl:param>
-    <!--<xsl:attribute-set name="admonition.properties">
-        <xsl:attribute name="border">2pt solid black</xsl:attribute>
-        <xsl:attribute name="background-color">#CCCCCC</xsl:attribute>
-        <xsl:attribute name="padding">0.1in</xsl:attribute>
-    </xsl:attribute-set>-->
+    <xsl:attribute-set name="graphical.admonition.properties">
+        <xsl:attribute name="margin-left">0.25in</xsl:attribute>
+        <xsl:attribute name="margin-right">0.25in</xsl:attribute>
+    </xsl:attribute-set>
 
     <xsl:template match="*" mode="admon.graphic.width">
-        <xsl:text>0.75in</xsl:text>
+        <xsl:text>0.375in</xsl:text>
     </xsl:template>
 
     <!-- Chapter title page styling -->
