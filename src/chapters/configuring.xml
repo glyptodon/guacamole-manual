@@ -194,7 +194,7 @@
         <example>
             <title>Example <filename>guacamole.properties</filename></title>
             <programlisting xml:id="guacamole.properties" version="5.0" xml:lang="en"># Hostname and port of guacamole proxy
-guacd-hostname: localhost
+guacd-host: localhost
 guacd-port:     4822</programlisting>
         </example>
     </section>
